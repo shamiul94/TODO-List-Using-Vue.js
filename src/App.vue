@@ -36,7 +36,7 @@ export default {
   }, 
   methods: {
     toggler(tds, id){
-      console.log('in baap');
+      console.log('in parent');
       console.log(tds); 
       console.log(id); 
       console.log(this.todos[id]['completed']); 
