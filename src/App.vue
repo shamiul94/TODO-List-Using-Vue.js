@@ -3,9 +3,10 @@
     <Todos
       v-bind:kera="todos"
       v-on:toggle-completed-in-todos="$id => {toggler(todos, $id)}"
+      v-on:del-app="$id=>{deleteTodo($id)}"
     />
-    <Todos v-bind:kera="todos" />
-    <h1>my test {{todos[0]['title']}}</h1>
+    <!-- <Todos v-bind:kera="todos" /> -->
+    <!-- <h1>my test {{todos[0]['title']}}</h1> -->
   </div>
 </template>
 
@@ -21,12 +22,12 @@ export default {
     return {
       todos: [
         {
-          id: 1,
+          id: 0,
           title: "todo one",
-          completed: true
+          completed: false
         },
         {
-          id: 2,
+          id: 1,
           title: "todo two",
           completed: false
         }
@@ -42,6 +43,9 @@ export default {
       this.todos[id]['completed'] = !this.todos[id]['completed'];
       console.log(this.todos[id]['completed']); 
       console.log('successful'); 
+    }, 
+    deleteTodo(id){
+        this.todos = this.todos.filter(todo => todo.id !== id); 
     }
   }
 };

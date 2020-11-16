@@ -1,9 +1,11 @@
 <template>
-  <div class="todo-item" v-bind:class="{'is-completed':todo.completed}">
+  <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
     <!-- <h1>{{todo.title}}</h1> -->
     <p>
         <input type="checkbox" v-on:change="markComplete"> 
         {{todo.title}}
+
+        <button @click="$emit('del-todo')" class="del"> Delete </button>
     </p>
   </div>
 </template>
@@ -15,7 +17,7 @@ export default {
   methods: {
       markComplete(){
         console.log('in items'); 
-        this.$emit('toggle-completed-in-todo-item', 0); 
+        this.$emit('toggle-completed-in-todo-item', this.todo.id); 
       }
   }
 };

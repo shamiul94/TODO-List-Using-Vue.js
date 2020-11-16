@@ -6,6 +6,7 @@
       <TodoItem
         v-bind:todo="todo"
         v-on:toggle-completed-in-todo-item="toggler2(todo)"
+        v-on:del-todo="$emit('del-app', todo.id)"
       />
     </div>
   </div>
