@@ -30,6 +30,31 @@ export default {
           id: 1,
           title: "todo two",
           completed: false
+        },
+        {
+          id: 2,
+          title: "todo three",
+          completed: false
+        },
+        {
+          id: 3,
+          title: "todo four",
+          completed: false
+        },
+        {
+          id: 4,
+          title: "todo five",
+          completed: false
+        },
+        {
+          id: 5,
+          title: "todo six",
+          completed: false
+        },
+        {
+          id: 6,
+          title: "todo seven",
+          completed: false
         }
       ]
     };
